@@ -13,6 +13,7 @@ func Logout(session sessions.Session, r render.Render) {
 
 func Auth(session sessions.Session, c martini.Context, r render.Render) {
 	v := session.Get("userid")
+
 	if v == nil {
 		r.Redirect("/login")
 	}else {
